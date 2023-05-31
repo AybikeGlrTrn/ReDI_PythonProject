@@ -14,15 +14,27 @@ todo_list = []
 # get and store text in the todo list of strings
 def new_task_entry():
   todo_desc = input ("Enter your new to do: ")
-#Define type of todo after enterinhg the task 
-  todo_type = input("Please select the to do type: \n1-Personal task \n2-Work task\n")
-#Define priority of todo after enterinhg the task 
-  todo_priority = input("Please select the to do priority: \n1-High importance \n2-Medium importance \n3-Low importance\n")
-#Enter deadline of todo
-  todo_deadline = input ("Please enter your to do deadline in MM/DD/YYYY forma: \n")  
   
+  while True:
+  #Define type of todo after enterinhg the task 
+    todo_type = input("Please select to do type: \n Enter 1 for Personal to do \n Enter 2 for Work to do \n")
+    if todo_type == "1" or todo_type == "2":
+      break 
+    else:
+      print ("Invalid operation. Please enter 1 or 2")
+
+  while True:
+  #Define priority of todo 
+    todo_priority = input("Please select to do priority: \n Enter 1 for High importance \n Enter 2 for Medium importance \n Enter 3 for Low importance\n")
+    if todo_priority == "1" or todo_priority == "2" or todo_priority == "3" :
+      break 
+    else:
+      print ("Invalid operation. Please enter 1, 2 or 3")
+  
+#Enter deadline of todo
+  todo_deadline = input ("Please enter your to do deadline in MM/DD/YYYY format: \n")  
 # create a new todo instance from the parameters given above
-# insert tne new instance into the list
+# insert the new instance into the list
   New_todo = Todo (todo_desc, todo_type, todo_priority, todo_deadline)
   todo_list.append(New_todo) 
 
